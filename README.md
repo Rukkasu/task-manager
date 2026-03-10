@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🛠️ Hub Industrial - Task Management System
+Aplicação desenvolvida para otimização de fluxos de manutenção e ordens de serviço em ambientes industriais. O sistema foca em alta disponibilidade de dados e priorização inteligente de tarefas críticas.
 
-## Getting Started
+🚀 Key Features
+Agrupamento Dinâmico: Organização automatizada por Responsáveis e Áreas.
 
-First, run the development server:
+Lógica de Priorização: Algoritmo que fixa tarefas de Prioridade 0 (Críticas) no topo de cada agrupamento.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Interface Híbrida: Alternância entre Data Table técnica e Kanban-style Cards.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Real-time Sync: Integração com PocketBase para persistência imediata e atualização de status.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Gestão de Configurações: CRUD completo para parâmetros do sistema (Projetos, Áreas e Staff).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🛠️ Tech Stack
+Core: Next.js 15 (App Router), React, TypeScript.
 
-## Learn More
+Styling: Tailwind CSS (Responsive Design).
 
-To learn more about Next.js, take a look at the following resources:
+Database/Auth: PocketBase (SQLite).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Icons: Lucide React.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+⚙️ Setup & Local Development
+Backend: Inicie o PocketBase servindo no seu IP local:
 
-## Deploy on Vercel
+Frontend: Instale as dependências e inicie o ambiente de desenvolvimento:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Status do Projeto: Em desenvolvimento / MVP Estável.
