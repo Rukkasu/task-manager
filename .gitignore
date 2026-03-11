@@ -10,6 +10,7 @@ docker-compose.override.yml (opcional)
 # PocketBase
 pb_public/
 pocketbase.exe
+pocketbase
 *.db
 
 # dependencies
