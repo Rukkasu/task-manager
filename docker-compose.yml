@@ -1,0 +1,24 @@
+services:
+  # Nosso site Next.js
+  frontend:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NEXT_PUBLIC_PB_URL=http://backend:8090
+    depends_on:
+      - backend
+
+  # Nosso Banco PocketBase
+  backend:
+    image: alpine:latest
+    ports:
+      - "8090:8090"
+    volumes:
+      - ./pb_data:/pb_data
+      - ./pocketbase.exe:/usr/local/bin/pocketbase
+    # Comando para rodar o PocketBase dentro do Linux do Docker
+    entrypoint: ["/usr/local/bin/pocketbase", "serve", "--http=0.0.0.0:8090"]

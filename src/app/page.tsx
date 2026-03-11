@@ -6,7 +6,8 @@ import {
   Pencil, Settings, Trash2, LayoutDashboard, Search, LayoutGrid, Table as TableIcon, Calendar, Clock, Filter, CheckCircle2, RotateCcw
 } from "lucide-react";
 
-const pb = new PocketBase('http://192.168.0.130:8090'); 
+
+const pb = new PocketBase('http://localhost:8090');
 
 export default function AppIndustrialHub() {
   const [abaAtiva, setAbaAtiva] = useState<"tarefas" | "config">("tarefas");
