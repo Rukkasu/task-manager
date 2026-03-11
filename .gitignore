@@ -1,7 +1,13 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# Docker
+.dockerignore
+
+# Logs e arquivos temporários do Docker
+*.log
+docker-compose.override.yml (opcional)
+
 # PocketBase
-pb_data/
 pb_public/
 pocketbase.exe
 *.db
