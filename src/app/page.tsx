@@ -1,16 +1,16 @@
 "use client";
 import { useState, useEffect } from "react";
-import PocketBase from 'pocketbase';
+import { useRouter } from "next/navigation";
+import pb from "@/lib/pocketbase";
 import { 
   Plus, ClipboardList, X, User, FolderKanban, 
   Pencil, Settings, Trash2, LayoutDashboard, Search, LayoutGrid, Table as TableIcon, Calendar, Clock, Filter, CheckCircle2, RotateCcw
 } from "lucide-react";
 
 
-const pb = new PocketBase('http://localhost:8090');
-
 export default function AppIndustrialHub() {
   const [abaAtiva, setAbaAtiva] = useState<"tarefas" | "config">("tarefas");
+  const router = useRouter();
   const [viewModo, setViewModo] = useState<"tabela" | "cards">("tabela");
   const [tarefas, setTarefas] = useState<any[]>([]);
   const [listaConfigs, setListaConfigs] = useState<any[]>([]);
@@ -26,6 +26,12 @@ export default function AppIndustrialHub() {
   const [novaTarefa, setNovaTarefa] = useState({
     descricao: "", area: "", prioridade: 3, responsavel: "", projeto: "", prazo: ""
   });
+
+  useEffect(() => {
+  if (!pb.authStore.isValid) {
+    router.push("/login");
+  }
+  }, [router]);
 
   const carregarDados = async () => {
     try {

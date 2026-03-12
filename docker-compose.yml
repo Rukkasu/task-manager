@@ -1,5 +1,5 @@
 services:
-  # Nosso site Next.js
+  # site Next.js
   frontend:
     build: .
     ports:
@@ -12,13 +12,13 @@ services:
     depends_on:
       - backend
 
-  # Nosso Banco PocketBase
+  # Banco PocketBase
   backend:
     image: alpine:latest
     ports:
       - "8090:8090"
     volumes:
-      - ./pb_data:/pb_data  # Pasta no seu Windows : Pasta no Linux do Docker
-      - ./pocketbase:/usr/local/bin/pocketbase
-    # Adicionamos o parâmetro --dir /pb_data para forçar o PocketBase a ler a pasta certa
+      - ./pb_data:/pb_data  # Pasta Windows : Pasta Linux do Docker
+      - ./pb_unix:/usr/local/bin/pocketbase
+    # parâmetro --dir /pb_data para forçar o PocketBase a ler a pasta certa
     entrypoint: ["sh", "-c", "chmod +x /usr/local/bin/pocketbase && /usr/local/bin/pocketbase serve --http=0.0.0.0:8090 --dir=/pb_data"]

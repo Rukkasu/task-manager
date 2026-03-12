@@ -1,0 +1,51 @@
+/* login.css */
+@import "tailwindcss";
+
+.login-container {
+  @apply flex flex-col items-center justify-center min-h-screen bg-slate-100;
+}
+
+.login-card {
+  @apply p-10 bg-white shadow-2xl rounded-xl w-[400px] border border-slate-200;
+}
+
+.login-title {
+  @apply text-3xl font-extrabold mb-2 text-center text-blue-700;
+}
+
+.login-subtitle {
+  @apply text-slate-500 text-center text-sm mb-8;
+}
+
+.login-error-box {
+  @apply bg-red-100 text-red-700 text-xs p-3 rounded-lg mb-4 border border-red-200 font-medium;
+}
+
+.login-form-group {
+  @apply space-y-5;
+}
+
+.login-input-wrapper {
+  @apply flex flex-col;
+}
+
+.login-label {
+  @apply text-xs font-bold text-slate-700 uppercase mb-1.5 ml-1;
+}
+
+.login-input {
+  /* border-slate-300 e texto mais escuro para visibilidade total */
+  @apply w-full p-3 border border-slate-300 rounded-lg bg-slate-50 text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm;
+}
+
+.login-button-main {
+  @apply w-full bg-blue-600 text-white p-3 rounded-lg mt-8 hover:bg-blue-700 active:scale-[0.98] transition-all font-bold shadow-lg shadow-blue-200 disabled:bg-slate-400;
+}
+
+.login-toggle-btn {
+  @apply text-sm text-blue-600 font-semibold hover:text-blue-800 mt-6 block w-full text-center transition-colors;
+}
+
+.login-footer-tag {
+  @apply mt-10 text-slate-400 text-[10px] uppercase tracking-[0.2em] font-medium;
+}
